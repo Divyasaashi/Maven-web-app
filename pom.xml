@@ -11,8 +11,8 @@
     <sonar.host.url>http://65.2.144.174:9000/</sonar.host.url>
     <sonar.login>467e4bad1914d2980d55c80be3d098bc18131df1</sonar.login>
      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-     <sonar.sources>src/main/java</sonar.sources>
-     <sonar.tests>src/test/java</sonar.tests>
+     <sonar.sources>./</sonar.sources>
+     <sonar.tests>./</sonar.tests>
      <sonar.exclusions>**/src/main/webapp/WEB-INF/web.xml</sonar.exclusions>
   </properties>
   <dependencies>
