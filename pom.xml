@@ -13,7 +13,7 @@
      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
      <sonar.sources>./</sonar.sources>
      <sonar.tests>./</sonar.tests>
-     <sonar.exclusions>**/src/main/webapp/WEB-INF/web.xml</sonar.exclusions>
+     <sonar.exclusions>**/src/main/webapp/WEB-INF/web.xml/*</sonar.exclusions>
   </properties>
   <dependencies>
     <dependency>
