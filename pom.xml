@@ -12,7 +12,7 @@
     <sonar.login>467e4bad1914d2980d55c80be3d098bc18131df1</sonar.login>
      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
      <sonar.sources>./</sonar.sources>
-     <sonar.tests>src/test/java</sonar.tests>
+     <sonar.tests>./</sonar.tests>
   </properties>
   <dependencies>
     <dependency>
