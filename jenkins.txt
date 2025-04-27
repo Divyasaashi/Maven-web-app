@@ -1,0 +1,46 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'Maven'
+    }
+
+    stages {
+        stage('code') {
+            steps {
+                // Get some code from a GitHub repository
+                git  branch : 'main', url : 'https://github.com/Divyasaashi/Maven-web-app.git'
+            }
+
+        }
+        stage('Build'){
+            steps{
+                sh 'mvn clean package'
+            }
+        }
+          stage('SonarQube'){
+                 tools{
+                     jdk 'Java-11'
+                 }
+              steps{
+                  withSonarQubeEnv('Sonar-Server'){
+                        sh '''
+                          mvn sonar:sonar \
+                            -Dsonar.projectKey=in.divya:maven-web-app \
+                            -Dsonar.sources=src/main/webapp \
+                            -Dsonar.java.binaries=target/classes \
+                            -Dsonar.host.url=http://13.126.145.10:9000/ \
+                            -Dsonar.login=467e4bad1914d2980d55c80be3d098bc18131df1
+                            '''
+                  }
+              }
+          } 
+        stage('Deploy'){
+            steps{
+                sshagent(['98335af7-0f71-4265-9e44-113b7f874e7e']) {
+                    sh 'scp -o StrictHostKeyChecking=no target/maven-web-app.war ubuntu@43.204.108.61:/home/ubuntu/apache-tomcat-9.0.104/webapps'
+                }
+            }
+        }
+    }
+}
