@@ -8,7 +8,7 @@
 </head>
 <body>
   <header>
-    <h1>Hi, I'm Saashi</h1>
+    <h1>Hi, I'm Divya</h1>
     <p>Aspiring DevOps | Cloud Engineer | Curious Soul</p>
   </header>
 
